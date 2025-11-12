@@ -7,8 +7,15 @@ Original file is located at
     https://colab.research.google.com/drive/1fAok2HJyQ4duL9i_Llkh6_tmRd_aSjI5
 """
 
-scores = input().split()
-fail_count = sum(1 for s in scores if int(s) < 60)
+
+scores = list(map(int, input().split()))
+
+fail_count = sum(1 for s in scores if s < 60)
+max_score = max(scores)
+min_score = min(scores)
 print(fail_count)
+print(max_score)
+print(min_score)
 average = sum(int(s) for s in scores) / len(scores)
 print(f"{average:.2f}")
+
